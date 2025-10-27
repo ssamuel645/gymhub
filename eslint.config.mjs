@@ -1,4 +1,4 @@
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
@@ -13,7 +13,8 @@ export default defineConfig([
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/ts/quotes': ['warn', 'single'],
       '@stylistic/ts/semi': ['error', 'always'],
-      '@stylistic/ts/object-curly-spacing': ['warn', 'always']
+      '@stylistic/ts/object-curly-spacing': ['warn', 'always'],
+      'max-len': ['error', { 'code': 80, 'tabWidth': 2 }]
     },
   },
   {
@@ -22,4 +23,5 @@ export default defineConfig([
     extends: ['js/recommended'],
   },
   tseslint.configs.recommended,
+  [globalIgnores(['dist/', 'node_modules/'])]
 ]);
