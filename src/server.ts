@@ -1,10 +1,5 @@
-import fastify from 'fastify';
 import { env } from './env';
-import { helloRoute } from './routes/hello';
-
-const app = fastify();
-
-app.register(helloRoute);
+import { app } from './app';
 
 app.listen({
   host: '0.0.0.0',

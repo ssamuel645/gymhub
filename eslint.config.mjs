@@ -14,7 +14,10 @@ export default defineConfig([
       '@stylistic/ts/quotes': ['warn', 'single'],
       '@stylistic/ts/semi': ['error', 'always'],
       '@stylistic/ts/object-curly-spacing': ['warn', 'always'],
-      'max-len': ['error', { 'code': 80, 'tabWidth': 2 }]
+      'max-len': [
+        'warn',
+        { code: 80, tabWidth: 2, ignorePattern: '^import .*' },
+      ],
     },
   },
   {
@@ -23,5 +26,5 @@ export default defineConfig([
     extends: ['js/recommended'],
   },
   tseslint.configs.recommended,
-  [globalIgnores(['dist/', 'node_modules/'])]
+  [globalIgnores(['dist/', 'node_modules/'])],
 ]);
