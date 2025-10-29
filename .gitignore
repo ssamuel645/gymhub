@@ -3,3 +3,4 @@ build
 db/app.db
 node_modules
 /generated/prisma
+coverage
